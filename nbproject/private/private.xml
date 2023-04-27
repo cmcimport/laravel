@@ -3,17 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp7/htdocs/laravel/resources/views/layouts/orders/pedido.php</file>
-            <file>file:/C:/xampp7/htdocs/laravel/resources/views/footer.blade.php</file>
-            <file>file:/C:/xampp7/htdocs/laravel/resources/views/layouts/users/my_account.blade.php</file>
-            <file>file:/C:/xampp7/htdocs/laravel/routes/web.php</file>
-            <file>file:/C:/xampp7/htdocs/laravel/resources/views/header.blade.php</file>
-            <file>file:/C:/xampp7/htdocs/laravel/resources/views/sidebar.blade.php</file>
-            <file>file:/C:/xampp7/htdocs/laravel/resources/views/pedido.blade.php</file>
-            <file>file:/C:/xampp7/htdocs/laravel/resources/views/layouts/home/index.blade.php</file>
-            <file>file:/C:/xampp7/htdocs/laravel/app/Http/Controllers/Ejemplo3Controller.php</file>
-            <file>file:/C:/xampp7/htdocs/laravel/resources/views/layouts/orders/pedidos.blade.php</file>
-            <file>file:/C:/xampp7/htdocs/laravel/resources/views/welcome.blade.php</file>
+            <file>file:/C:/xampp7/htdocs/laravel-git/laravel/app/Http/Controllers/UserController.php</file>
+            <file>file:/C:/xampp7/htdocs/laravel-git/laravel/routes/web.php</file>
+            <file>file:/C:/xampp7/htdocs/laravel-git/laravel/app/Http/Controllers/OrderController.php</file>
+            <file>file:/C:/xampp7/htdocs/laravel-git/laravel/resources/views/layouts/users/pagos.blade.php</file>
         </group>
     </open-files>
 </project-private>

@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -15,12 +18,12 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-<!-- Main content -->
+    <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <div class="card">
+            <div class="card card-outline card-primary">
               <div class="card-header">
                 <h3 class="card-title">Mis pedidos</h3>
               </div>
@@ -29,50 +32,59 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th style="width: 10px">ID #</th>
+                      <th style="width: 10px">#ID</th>
                       <th>Vendedor</th>
-                      
                       <th style="width: 40px">Estado</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>Z999</td>
-                      <td>Panadería Julia</td>
-                      <td><a href="/order" class="bg-danger btn col-12">CANCELADO</a></td>
-                    </tr>
-                    <tr>
-                      <td>AA000</td>
-                      <td>Electrónica millar</td>
-                      <td><a href="/order" class="bg-warning btn col-12">PENDIENTE</a></td>
-                    </tr>
-                    <tr>
-                      <td>AA001</td>
-                      <td>Moda Valentina</td>
-                      <td><a href="/order" class="bg-primary btn col-12">EN PROCESO</a></td>
-                    </tr>
-                    <tr>
-                      <td>AA002</td>
-                      <td>Peluquería Canina</td>
-                      <td><a href="/order" class="bg-success btn col-12">ENVIADO</span></td>
-                    </tr>
-                    <tr>
-                      <td>AA003</td>
-                      <td>Reformas paco</td>
-                      <td><a href="/order" class="bg-gradient-info btn col-12">COMPLETADO</span></td>
-                    </tr>
-                  </tbody>
+                  
+                    <tbody>
+
+                        @foreach($reservas as $reserva)
+                            @foreach($tiendas as $tienda)
+                                @if($tienda->id==$reserva->tienda_id)
+                                <tr>
+                                    <td>#0{{$reserva->id}}</td>
+                                    <td>{{$tienda->nombre_comercial}}</td>
+                                    <td><a href="/pedido/{{$reserva->id}}" class="bg-primary btn col-12">{{$reserva->estado}}</a></td>
+                                </tr>
+                                @endif
+                            @endforeach
+                        @endforeach
+                      <!-- tr>
+                        <td>Z999</td>
+                        <td>Panadería Julia</td>
+                        <td><a href="/pedido" class="bg-danger btn col-12">CANCELADO</a></td>
+                      </tr>
+                      <tr>
+                        <td>AA000</td>
+                        <td>Electrónica millar</td>
+                        <td><a href="/pedido" class="bg-warning btn col-12">PENDIENTE</a></td>
+                      </tr>
+                      <tr>
+                        <td>AA001</td>
+                        <td>Moda Valentina</td>
+                        <td><a href="/pedido" class="bg-primary btn col-12">EN PROCESO</a></td>
+                      </tr>
+                      <tr>
+                        <td>AA002</td>
+                        <td>Peluquería Canina</td>
+                        <td><a href="/pedido" class="bg-success btn col-12">ENVIADO</span></td>
+                      </tr>
+                      <tr>
+                        <td>AA003</td>
+                        <td>Reformas paco</td>
+                        <td><a href="/pedido" class="bg-gradient-info btn col-12">COMPLETADO</span></td>
+                      </tr -->
+
+                    </tbody>
                 </table>
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                <ul class="pagination pagination-sm m-0 float-right">
-                  <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                </ul>
+                    <nav aria-label="Contacts Page Navigation">
+                        {{ $reservas->links() }}
+                    </nav>
               </div>
             </div>
             <!-- /.card -->
@@ -83,3 +95,4 @@
 
 </div>
 
+@endsection
